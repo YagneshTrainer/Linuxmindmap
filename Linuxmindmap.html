@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeerBrainsWithYagnesh - Linux Administration MindMap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BeerBrainsWithYagnesh</h1>
+            <h2>Linux Administration MindMap</h2>
+        </header>
+        <main>
+            <div id="content">
+                <!-- Insert the content from BeerBrains.html here -->
+                <h3 id="table-of-contents">Table of Contents</h3>
+                <hr>
+                <table>
+                <thead>
+                <tr>
+                <th>No.</th>
+                <th>Topic</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>1</td>
+                <td><a href="#user-information"><strong>User information</strong></a></td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td><a href="#file-and-directory-commands"><strong>File and directory commands</strong></a></td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td><a href="#file-permissions"><strong>File permissions</strong></a></td>
+                </tr>
+                <tr>
+                <td>4</td>
+                <td><a href="#networking"><strong>Networking</strong></a></td>
+                </tr>
+                <tr>
+                <td>5</td>
+                <td><a href="#installing-packages"><strong>Installing packages</strong></a></td>
+                </tr>
+                <tr>
+                <td>6</td>
+                <td><a href="#disk-usage"><strong>Disk usage</strong></a></td>
+                </tr>
+                <tr>
+                <td>7</td>
+                <td><a href="#system-and-hardware-information"><strong>System and Hardware information</strong></a></td>
+                </tr>
+                <tr>
+                <td>8</td>
+                <td><a href="#search-files"><strong>Search Files</strong></a></td>
+                </tr>
+                <tr>
+                <td>9</td>
+                <td><a href="#ssh"><strong>SSH</strong></a></td>
+                </tr>
+                <tr>
+                <td>10</td>
+                <td><a href="#vi/vim-commands"><strong>Vi/Vim-commands</strong></a></td>
+                </tr>
+                <tr>
+                <td>11</td>
+                <td><a href="#Top-Command"><strong>Top/TaskManager Command</strong></a></td>
+                </tr>
+                <tr>
+                <td>12</td>
+                <td><a href="#Kill-Command"><strong>Kill Command</strong></a></td>
+                </tr>
+                <tr>
+                <td>13</td>
+                <td><a href="#History-Command"><strong>History Command</strong></a></td>
+                </tr>
+                <tr>
+                <td>14</td>
+                <td><a href="#Curl-Command"><strong>Curl Command</strong></a></td>
+                </tr>
+                </tbody>
+                </table>
+                <h3 id="user-information">User Information</h3>
+                <ol>
+                <li><p><strong>who</strong> It is used to get information about currently logged in user on to system. If you don&#39;t provide any option or arguments, the command displays the following information for each logged-in user.</p>
+                <ol>
+                <li>Login name of the user</li>
+                <li>User terminal</li>
+                <li>Date &amp; Time of login</li>
+                <li>Remote host name of the user</li>
+                </ol>
+                <pre><code class="lang-bash">$ who
+                yagnesh :0 2019<span class="hljs-string">-08</span><span class="hljs-string">-04</span> 01:21 (:0)
+                </code></pre>
+                </li>
+                <li><p><strong>whoami:</strong> It display the system’s username</p>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>whoami
+                yagnesh
+                </code></pre>
+                </li>
+                <li><p><strong>id:</strong> It display the user identification(the real and effective user and group IDs) information</p>
+                <pre><code class="lang-bash">$ id
+                uid=<span class="hljs-number">1000</span><span class="hljs-comment">(sj)</span> gid=<span class="hljs-number">1000</span><span class="hljs-comment">(sj)</span> groups=<span class="hljs-number">1000</span><span class="hljs-comment">(sj)</span>,<span class="hljs-number">4</span><span class="hljs-comment">(adm)</span>,<span class="hljs-number">24</span><span class="hljs-comment">(cdrom)</span>,<span class="hljs-number">27</span><span class="hljs-comment">(sudo)</span>,<span class="hljs-number">30</span><span class="hljs-comment">(dip)</span>,<span class="hljs-number">46</span><span class="hljs-comment">(plugdev)</span>,<span class="hljs-number">120</span><span class="hljs-comment">(lpadmin)</span>,<span class="hljs-number">131</span><span class="hljs-comment">(lxd)</span>,<span class="hljs-number">132</span><span class="hljs-comment">(sambashare)</span>
+                </code></pre>
+                </li>
+                <li><p><strong>groups:</strong> This command is used to display all the groups for which the user belongs to.</p>
+                <pre><code class="lang-bash">$ <span class="hljs-keyword">group</span>
+                <span class="hljs-title">sj</span>: sj, adm, cdrom, sudo, dip, plugdev, lpadmin, lxd, sambashare
+                </code></pre>
+                </li>
+                <li><p><strong>finger:</strong>  Used to check the information of any currently logged in users. i.e, It displays users login time, tty (name), idle time, home directory, shell name etc.</p>
+                <pre><code class="lang-bash">$ finger
+                Login     <span class="hljs-built_in">Name</span>       Tty      Idle  Login <span class="hljs-built_in">Time</span>   Office     Office Phone
+                sj        sj        *:<span class="hljs-number">0</span>             Aug <span class="hljs-number">28</span> <span class="hljs-number">01</span>:<span class="hljs-number">27</span> (:<span class="hljs-number">0</span>)
+                </code></pre>
+                <p>This may not be available by default in many linux machines. In this case, you need to install it manually.</p>
+                <pre><code class="lang-bash">$ sudo apt <span class="hljs-keyword">install</span> finger
+                </code></pre>
+                </li>
+                <li><p><strong>users:</strong> Displays usernames of all users currently logged on the system.</p>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>users
+                sj
+                </code></pre>
+                </li>
+                <li><p><strong>grep:</strong> It  is a powerful pattern searching tool to find information about a specific user from the system accounts file: /etc/passwd.</p>
+                <pre><code class="lang-bash"> <span class="hljs-variable">$ </span>grep -i sj /etc/passwd
+                 <span class="hljs-symbol">sj:</span><span class="hljs-symbol">x:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:</span><span class="hljs-number">1000</span><span class="hljs-symbol">:sj</span>,,,<span class="hljs-symbol">:/home/sj</span><span class="hljs-symbol">:/bin/bash</span>
+                </code></pre>
+                </li>
+                <li><p><strong>W Command:</strong> It(W) is a command-line utility that displays information about currently logged in users and what each user is doing.</p>
+                <pre><code class="lang-bash"> w [OPTIONS] [USER]
+                
+                 <span class="hljs-symbol">Example:</span>
+                 w
+                  <span class="hljs-number">18</span>:<span class="hljs-number">45</span>:<span class="hljs-number">04</span> up  <span class="hljs-number">2</span>:<span class="hljs-number">09</span>,  <span class="hljs-number">1</span> user,  load <span class="hljs-symbol">average:</span> <span class="hljs-number">0.09</span>, <span class="hljs-number">0.07</span>, <span class="hljs-number">0.02</span>
+                 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+                 sj       :<span class="hljs-number">0</span>       :<span class="hljs-number">0</span>               <span class="hljs-number">01</span>:<span class="hljs-number">27</span>   ?xdm?   <span class="hljs-number">1</span>:<span class="hljs-number">14</span>   <span class="hljs-number">0.01</span>s /usr/<span class="hljs-class"><span class="hljs-keyword">lib</span>/<span class="hljs-title">gdm3</span>/<span class="hljs-title">g</span></span>
+                </code></pre>
+                </li>
+                <li><p><strong>last or lastb:</strong> Displays a list of last logged in users on the system. You can pass user names to display their login and hostname details.</p>
+                <pre><code class="lang-bash"> <span class="hljs-selector-tag">last</span> <span class="hljs-selector-attr">[options]</span> <span class="hljs-selector-attr">[username...]</span> <span class="hljs-selector-attr">[tty...]</span>
+                
+                 <span class="hljs-selector-tag">Example</span>:
+                
+                 <span class="hljs-selector-tag">last</span>
+                 <span class="hljs-selector-tag">sj</span>       <span class="hljs-selector-pseudo">:0</span>           <span class="hljs-selector-pseudo">:0</span>               <span class="hljs-selector-tag">Fri</span> <span class="hljs-selector-tag">Aug</span> 28 01<span class="hljs-selector-pseudo">:27</span>    <span class="hljs-selector-tag">gone</span> <span class="hljs-selector-tag">-</span> <span class="hljs-selector-tag">no</span> <span class="hljs-selector-tag">logout</span>
+                 <span class="hljs-selector-tag">reboot</span>   <span class="hljs-selector-tag">system</span> <span class="hljs-selector-tag">boot</span>  5<span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.0-29-generic</span> <span class="hljs-selector-tag">Fri</span> <span class="hljs-selector-tag">Aug</span> 28 01<span class="hljs-selector-pseudo">:27</span>   <span class="hljs-selector-tag">still</span> <span class="hljs-selector-tag">running</span>
+                 <span class="hljs-selector-tag">sj</span>       <span class="hljs-selector-pseudo">:0</span>           <span class="hljs-selector-pseudo">:0</span>               <span class="hljs-selector-tag">Wed</span> <span class="hljs-selector-tag">Jul</span> 29 11<span class="hljs-selector-pseudo">:46</span> <span class="hljs-selector-tag">-</span> <span class="hljs-selector-tag">crash</span> (29+13<span class="hljs-selector-pseudo">:40)</span>
+                 <span class="hljs-selector-tag">reboot</span>   <span class="hljs-selector-tag">system</span> <span class="hljs-selector-tag">boot</span>  5<span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.0-29-generic</span> <span class="hljs-selector-tag">Wed</span> <span class="hljs-selector-tag">Jul</span> 29 11<span class="hljs-selector-pseudo">:45</span>   <span class="hljs-selector-tag">still</span> <span class="hljs-selector-tag">running</span>
+                 <span class="hljs-selector-tag">sj</span>       <span class="hljs-selector-pseudo">:0</span>           <span class="hljs-selector-pseudo">:0</span>               <span class="hljs-selector-tag">Thu</span> <span class="hljs-selector-tag">May</span> 14 21<span class="hljs-selector-pseudo">:04</span> <span class="hljs-selector-tag">-</span> <span class="hljs-selector-tag">crash</span> (75+14<span class="hljs-selector-pseudo">:41)</span>
+                 <span class="hljs-selector-tag">reboot</span>   <span class="hljs-selector-tag">system</span> <span class="hljs-selector-tag">boot</span>  5<span class="hljs-selector-class">.4</span><span class="hljs-selector-class">.0-29-generic</span> <span class="hljs-selector-tag">Thu</span> <span class="hljs-selector-tag">May</span> 14 21<span class="hljs-selector-pseudo">:03</span>   <span class="hljs-selector-tag">still</span> <span class="hljs-selector-tag">running</span>
+                
+                 <span class="hljs-selector-tag">wtmp</span> <span class="hljs-selector-tag">begins</span> <span class="hljs-selector-tag">Thu</span> <span class="hljs-selector-tag">May</span> 14 21<span class="hljs-selector-pseudo">:03</span><span class="hljs-selector-pseudo">:56</span> 2020
+                </code></pre>
+                </li>
+                <li><p><strong>lastlog:</strong> The <code>lastlog</code> command is used to find the details of a recent login of all users or of a given user.</p>
+                <pre><code class="lang-cmd">$ lastlog
+                
+                Username         Port     From             Latest
+                root                                       **Never logged <span class="hljs-keyword">in</span>**
+                daemon                                     **Never logged <span class="hljs-keyword">in</span>**
+                bin                                        **Never logged <span class="hljs-keyword">in</span>**
+                sys                                        **Never logged <span class="hljs-keyword">in</span>**
+                sync                                       **Never logged <span class="hljs-keyword">in</span>**
+                games                                      **Never logged <span class="hljs-keyword">in</span>**
+                man                                        **Never logged <span class="hljs-keyword">in</span>**
+                lp                                         **Never logged <span class="hljs-keyword">in</span>**
+                mail                                       **Never logged <span class="hljs-keyword">in</span>**
+                <span class="hljs-keyword">new</span><span class="hljs-type">s</span>                                       **Never logged <span class="hljs-keyword">in</span>**
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                </li>
+                </ol>
+                <h3 id="file-and-directory-commands">File and directory commands</h3>
+                <ol>
+                <li><p><strong>pwd</strong> The pwd(Present Working Directory) command is used to print the name of the present/current working directory starting from the root.</p>
+                <pre><code class="lang-bash">$ pwd
+                <span class="hljs-regexp">/home/</span>sj<span class="hljs-regexp">/Desktop/</span>Linux
+                </code></pre>
+                </li>
+                <li><p><strong>ls</strong>: The <code>ls</code> command is used to list files or directories. It also accepts some flags or options that changes how files or directories are listed in your terminal.</p>
+                <pre><code class="lang-bash">  <span class="hljs-symbol">Syntax:</span>
+                  ls [flags] [directory]
+                
+                  <span class="hljs-symbol">Example:</span>
+                  $ ls
+                  bin dev <span class="hljs-class"><span class="hljs-keyword">lib</span> <span class="hljs-title">libx32</span> <span class="hljs-title">mnt</span>  </span>
+                
+                  /<span class="hljs-regexp">/Listing files &amp; directories with time in a rever order
+                  $ ls -ltr
+                  drwxr-xr-x 2 sj sj 4096 May 14  2020 Videos
+                  drwxr-xr-x 2 sj sj 4096 May 14  2020 Templates
+                  drwxr-xr-x 2 sj sj 4096 May 14  2020 Public
+                
+                  /</span><span class="hljs-regexp">/Home directory
+                  $ ls ~
+                  Desktop    Downloads  Pictures  yagnesh    test   test.txt
+                  Documents  Music      Public    Templates  test1  Videos</span>
+                </code></pre>
+                <p> Below are the list of possible options for <code>ls</code> command,</p>
+                <pre><code class="lang-cmd"> -a <span class="hljs-keyword">Show</span> all (<span class="hljs-keyword">including</span> hidden)
+                 -R <span class="hljs-keyword">Recursive</span> <span class="hljs-keyword">list</span>
+                 -r <span class="hljs-keyword">Reverse</span> <span class="hljs-keyword">order</span>
+                 -t <span class="hljs-keyword">Sort</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">last</span> modified
+                 -S <span class="hljs-keyword">Sort</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">file</span> <span class="hljs-keyword">size</span>
+                 -l <span class="hljs-keyword">Long</span> listing <span class="hljs-keyword">format</span>
+                 <span class="hljs-number">-1</span> One <span class="hljs-keyword">file</span> per line
+                 -m Comma-­sep­arated <span class="hljs-keyword">output</span>
+                 -Q Quoted <span class="hljs-keyword">output</span>
+                </code></pre>
+                </li>
+                <li><p><strong>mkdir</strong> The mkdir(make directory) command allows users to create directories or folders.</p>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>mkdir ubuntu
+                <span class="hljs-variable">$ </span>ls
+                ubuntu
+                </code></pre>
+                <p>The option &#39;-p&#39; is used to create multiple directories or parent directories at once.</p>
+                <pre><code class="lang-bash">$ mkdir -p dir1<span class="hljs-regexp">/dir2/</span>dir3
+                $ cd dir1<span class="hljs-regexp">/dir2/</span>dir3
+                ~<span class="hljs-regexp">/Desktop/</span>Linux<span class="hljs-regexp">/dir1/</span>dir2<span class="hljs-regexp">/dir3$</span>
+                </code></pre>
+                </li>
+                <li><p><strong>rmdir</strong>: The rmdir(remove directories) is used to remove <em>empty</em> directories. Can be used to delete multiple empty directories as well. Safer to use compared to <code>rm -r FolderName</code>. This command can also be forced to delete non-empty directories.</p>
+                <ol>
+                <li>Remove empty directory:</li>
+                </ol>
+                <pre><code class="lang-bash"><span class="hljs-built_in">rmdir</span> FolderName
+                </code></pre>
+                <ol>
+                <li>Remove multiple directories:</li>
+                </ol>
+                <pre><code class="lang-bash">rmdir Folder<span class="hljs-symbol">Name1</span> Folder<span class="hljs-symbol">Name2</span> Folder<span class="hljs-symbol">Name3</span>
+                </code></pre>
+                <ol>
+                <li>Remove non-empty directories:</li>
+                </ol>
+                <pre><code class="lang-bash"><span class="hljs-attribute">rmdir</span> FolderName1 --ignore-fail-<span class="hljs-literal">on</span>-non-empty
+                </code></pre>
+                <ol>
+                <li>Remove entire directory tree. This command is similar to <code>rmdir a/b/c a/b a</code>:</li>
+                </ol>
+                <pre><code class="lang-bash">rmdir -<span class="hljs-selector-tag">p</span> a/b/c
+                </code></pre>
+                </li>
+                <li><p><strong>rm</strong>: The rm(remove) command is used to remove objects such as files, directories, symbolic links etc from the file system.</p>
+                <ol>
+                <li>Remove file: The rm command is used to remove or delete a file<pre><code class="lang-bash">rm <span class="hljs-built_in">file_name</span>
+                </code></pre>
+                </li>
+                <li>Remove file forcefully: The rm command with -f option is used for removal of file without prompting for confirmation.<pre><code class="lang-bash">rm <span class="hljs-_">-f</span> filename
+                </code></pre>
+                </li>
+                <li>Remove directory: The rm command with -r option is used to remove the directory and its contents recursively.<pre><code class="lang-bash"><span class="hljs-attribute">rm -r myDir</span>
+                </code></pre>
+                </li>
+                <li>Remove directory forcefully: The rm command with -rf option is used to forcefully remove directory recursively.<pre><code class="lang-bash"><span class="hljs-attribute">rm -rf myDir</span>
+                </code></pre>
+                </li>
+                </ol>
+                </li>
+                <li><p><strong>touch</strong>: The touch command is is used to create, change and modify timestamps of a file without any content.</p>
+                <ol>
+                <li><strong>Create a new file:</strong> You can create a single file at a time using touch command. The file created is an empty file.<pre><code class="lang-bash"> <span class="hljs-keyword">touch</span> file_name
+                </code></pre>
+                </li>
+                <li><strong>Create multiple files:</strong> You can create the multiple numbers of files at the same time.<pre><code class="lang-bash"> <span class="hljs-keyword">touch</span> file1_name file2_name file3_name
+                </code></pre>
+                </li>
+                <li><strong>Change access time:</strong> The touch command with <code>a</code> option is used to change the access time of a file.<pre><code class="lang-bash"> touch -<span class="hljs-selector-tag">a</span> file_name
+                </code></pre>
+                </li>
+                <li><strong>Change modification time:</strong> The touch command with <code>m</code> option is used to change the modified time.<pre><code class="lang-bash"> <span class="hljs-keyword">touch</span> -m file_name
+                </code></pre>
+                </li>
+                <li><p><strong>Use timestamp of other file:</strong> The touch command with <code>r</code> option is used to get timestamp of another file.</p>
+                <pre><code class="lang-bash"> <span class="hljs-keyword">touch</span> -r file2 file1
+                </code></pre>
+                <p> In the above example, we get the timestamp of file1 for file2.</p>
+                </li>
+                <li><p><strong>Create file with Specific time:</strong> The touch command with &#39;t&#39; option is used to create a file with specified time.</p>
+                <pre><code class="lang-bash"> <span class="hljs-section">touch</span> -t <span class="hljs-number">1911010000</span> file_name
+                </code></pre>
+                </li>
+                </ol>
+                </li>
+                <li><p><strong>cat</strong>: The cat command is used to create single or multiple files, view contain of file, concatenate files and redirect output in terminal or files.</p>
+                <pre><code class="lang-bash">  <span class="hljs-symbol">$</span> cat [<span class="hljs-keyword">OPTION</span>] [<span class="hljs-keyword">FILE</span>]...
+                </code></pre>
+                <ol>
+                <li><strong>Create a file:</strong> Used to create a file with specific name, content and press exit using <code>CTRL + D</code><pre><code class="lang-bash"> <span class="hljs-selector-tag">cat</span> &gt; <span class="hljs-selector-tag">file_name1</span><span class="hljs-selector-class">.txt</span>
+                 <span class="hljs-selector-tag">Hello</span>, <span class="hljs-selector-tag">How</span> <span class="hljs-selector-tag">are</span> <span class="hljs-selector-tag">you</span>?
+                </code></pre>
+                </li>
+                <li><p><strong>View file contents:</strong> You can view contents of a single or more files by mentioning the filenames.</p>
+                <pre><code class="lang-bash"> cat file_<span class="hljs-symbol">name1</span> file_<span class="hljs-symbol">name2</span>
+                </code></pre>
+                </li>
+                <li><p><strong>More &amp; Less options:</strong> If a file having a large number of content that won’t fit in the output terminal then <code>more</code> &amp; <code>less</code> options can be used to indiate additional content.</p>
+                <pre><code class="lang-bash"> <span class="hljs-keyword">cat</span> file_name1.txt | <span class="hljs-keyword">more</span>
+                 <span class="hljs-keyword">cat</span> file_name1.txt | less
+                </code></pre>
+                </li>
+                </ol>
+                </li>
+                </ol>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="file-permissions">File permissions</h3>
+                <p>Since Linux is a multi-user operating system, it is necessary to provide security to prevent people from accessing each other’s confidential files.
+                So Linux divides authorization into 2 levels,</p>
+                <ol>
+                <li><p><strong>Ownership:</strong>
+                Each file or directory has assigned with 3 types of owners
+                i. <strong>User:</strong> Owner of the file who created it.
+                ii. <strong>Group:</strong> Group of users with the same access permissions to the file or directory.
+                iii. <strong>Other:</strong> Applies to all other users on the system</p>
+                </li>
+                <li><p><strong>Permissions:</strong>
+                Each file or directory has following permissions for the above 3 types of owners.</p>
+                <p> i.   <strong>Read:</strong> Give you the authority to open and read a file and lists its content for a directory.</p>
+                <p> ii.  <strong>Write:</strong> Give you the authority to modify the contents of a file and add, remove and rename files stored in the directory.</p>
+                <p> iii. <strong>Execute:</strong> Give you the authority to run the program in Unix/Linux.</p>
+                <p>  The permissions are indicated with below characters,</p>
+                <pre><code>  r = read permission
+                
+                  w = write permission
+                
+                  x =<span class="hljs-built_in"> execute </span>permission
+                
+                  \- = no permission
+                </code></pre><p> The above authorization levels represented in a diagram</p>
+                </li>
+                </ol>
+                <p><img src="https://github.com/YagneshTrainer/Linuxmindmap/permissions.png" width="600" height="400"></p>
+                <p>There is a need to restrict own file/directory access to others.</p>
+                <p><strong>Change access:</strong>
+                The <code>chmod</code> command is used to change the access mode of a file.  This command is used to set permissions (read, write, execute) on a file/directory for the owner, group and the others group.</p>
+                <pre><code class="lang-cmd">chmod [<span class="hljs-string">reference</span>][<span class="hljs-symbol">operator</span>][<span class="hljs-string">mode</span>] file...
+                
+                Example
+                chmod ugo-rwx test.txt
+                </code></pre>
+                <p>There are 2 ways to use this command,</p>
+                <ol>
+                <li><p><strong>Absolute mode:</strong>
+                The file permissions will be represented in a three-digit octal number.</p>
+                <p>  The possible permissions types represented in a number format as below.</p>
+                <p>  | Permission Type | Number |  Symbol |
+                  | ------------- | ----- | ----- |
+                  | No Permission | 0 | --- |
+                  | Execute | 1 | --x |
+                  | Write | 2 | -w- |
+                  | Execute + Write | 3 | -wx |
+                  | Read | 4 | r-- |
+                  | Read + Execute | 5 | r-x |
+                  | Read + Write | 6 | rw- |
+                  | Read + Write + Execute | 7 | rwx |</p>
+                </li>
+                </ol>
+                <p>Let&#39;s update the permissions in absolute mode with an example as below,</p>
+                <pre><code class="lang-cmd">    <span class="hljs-selector-tag">chmode</span> 764 <span class="hljs-selector-tag">test</span><span class="hljs-selector-class">.txt</span>
+                </code></pre>
+                <ol>
+                <li><p><strong>Symbolic mode:</strong>
+                In the symbolic mode, you can modify permissions of a specific owner unlike absolute mode.</p>
+                <p> The owners are represented as below,</p>
+                <p>  | Owner | Description |
+                  | ----- | ----- |
+                  | u | user/owner |
+                  | g | group |
+                  | o | other |
+                  | a | all |</p>
+                <p> and the list of mathematical symbols to modify the file permissions as follows,</p>
+                <p>  | Operator | Description |
+                  | ------------- | ----- |
+                  | + | Adds permission |
+                  | - | Removes the permission |
+                  | = | Assign the permission |</p>
+                </li>
+                </ol>
+                <p><strong>Changing Ownership and Group:</strong>
+                It is possible to change the the ownership and group of a file/directory using <code>chown</code> command.</p>
+                <pre><code class="lang-cmd">chown <span class="hljs-keyword">user</span> <span class="hljs-title">filename</span>
+                chown user:<span class="hljs-keyword">group</span> <span class="hljs-title">filename</span>
+                
+                Example:
+                chown John test.txt
+                chown John:Admin test.txt
+                </code></pre>
+                <p><strong>Change group-owner only:</strong>
+                Sometimes you may need to change group owner only. In this case, chgrp command need to be used</p>
+                <pre><code class="lang-cmd">chgrp group_name filename
+                
+                <span class="hljs-symbol">Example:</span>
+                sudo chgrp Administrator test.txt
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="networking">Networking</h3>
+                <ol>
+                <li><strong>Display network information:</strong> <code>ifconfig</code> command is used to display all network information(ip address, ports etc)</li>
+                </ol>
+                <pre><code class="lang-cmd">ifconfig <span class="hljs-_">-a</span>
+                </code></pre>
+                <ol>
+                <li><p><strong>Test connection to a remote machine:</strong> Send an echo request to test connection of a remote machine.</p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">ping</span> &lt;ip-address&gt; <span class="hljs-keyword">or</span> hostname
+                
+                <span class="hljs-symbol">Example:</span>
+                <span class="hljs-built_in">ping</span> <span class="hljs-number">10.0</span><span class="hljs-number">.0</span><span class="hljs-number">.11</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Show IP Address:</strong> Display ip address of a currennt machine</p>
+                <pre><code class="lang-cmd">hostname -I
+                (<span class="hljs-keyword">OR</span>)
+                ip addr <span class="hljs-keyword">show</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Active ports:</strong> Shows active or listening ports</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> netstat -pnltu</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Find information about domain:</strong> <code>whois</code> command is used to find out information about a domain, such as the owner of the domain, the owner’s contact information, and the nameservers used by domain.</p>
+                <pre><code class="lang-cmd"><span class="hljs-selector-tag">whois</span> <span class="hljs-selector-attr">[domain]</span>
+                
+                <span class="hljs-selector-tag">Example</span>:
+                <span class="hljs-selector-tag">whois</span> <span class="hljs-selector-tag">google</span><span class="hljs-selector-class">.com</span>
+                </code></pre>
+                </li>
+                </ol>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="installing-packages">Installing packages</h3>
+                <ol>
+                <li><strong>Install package:</strong></li>
+                </ol>
+                <pre><code class="lang-cmd">yum install <span class="hljs-keyword">package</span><span class="hljs-number">_n</span>ame
+                </code></pre>
+                <ol>
+                <li><strong>Package description:</strong>
+                The info command is used to display brief details about a package.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">yum</span> <span class="hljs-literal">info</span> package_name
+                </code></pre>
+                <ol>
+                <li><strong>Uninstall package:</strong>
+                The remove command is used to remove or uninstall package name.<pre><code class="lang-cmd">yum <span class="hljs-built_in">remove</span> package_name
+                </code></pre>
+                </li>
+                <li><strong>Install package from local file:</strong></li>
+                </ol>
+                <p>It is also possible to install package from local file named package_name.rpm.</p>
+                <pre><code class="lang-cmd">rpm -<span class="hljs-selector-tag">i</span> package_name.rpm
+                </code></pre>
+                <ol>
+                <li><strong>Install from source code:</strong></li>
+                </ol>
+                <pre><code class="lang-cmd">tar zxvf sourcecode<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+                cd sourcecode
+                ./configure
+                make
+                make install
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="disk-usage">Disk usage</h3>
+                <ol>
+                <li><strong>Synopsis:</strong> <code>du</code> command is used to check the information of disk usage of files and directories on a machine</li>
+                </ol>
+                <pre><code class="lang-cmd">du [<span class="hljs-symbol">OPTION</span>]... [<span class="hljs-symbol">FILE</span>]...
+                </code></pre>
+                <ol>
+                <li><strong>Disk usage of a directory:</strong> To find out the disk usage summary of a /home/ directory tree and each of its sub directories</li>
+                </ol>
+                <pre><code class="lang-cmd">du  /<span class="hljs-built_in">home</span>/
+                </code></pre>
+                <ol>
+                <li><strong>Disk usage in human readable format:</strong> To find out the disk usage in human readable format</li>
+                </ol>
+                <pre><code class="lang-cmd">du  -h /<span class="hljs-built_in">home</span>/
+                </code></pre>
+                <ol>
+                <li><strong>Total disk usage of a directory:</strong> To find out the total disk usage</li>
+                </ol>
+                <pre><code class="lang-cmd">du  -sh /<span class="hljs-built_in">home</span>/
+                </code></pre>
+                <ol>
+                <li><strong>Total disk usage of all files and directories:</strong> To find out the total disk usage of files and directories</li>
+                </ol>
+                <pre><code class="lang-cmd">du  -ah /<span class="hljs-built_in">home</span>/
+                </code></pre>
+                <ol>
+                <li><strong>Total disk usage of all files and directories upto certain depth:</strong> print the total for a directory only if it is N or fewer levels below the command</li>
+                </ol>
+                <pre><code class="lang-cmd">du  -ah --<span class="hljs-built_in">max</span>-depth <span class="hljs-number">2</span> /<span class="hljs-built_in">home</span>/
+                </code></pre>
+                <ol>
+                <li><strong>Total disk usage with excluded files:</strong> To find out the total disk usage of files and directories, but excludes the files that matches given pattern.</li>
+                </ol>
+                <pre><code class="lang-cmd">du -ah --<span class="hljs-keyword">exclude</span>=<span class="hljs-string">"*.txt"</span> <span class="hljs-regexp">/home/</span>
+                </code></pre>
+                <ol>
+                <li><strong>Help:</strong> This command gives information about <code>du</code></li>
+                </ol>
+                <pre><code class="lang-cmd">du  <span class="hljs-comment">--help</span>
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="system-and-hardware-information">System and Hardware information</h3>
+                <ol>
+                <li><strong>Print all information</strong>: <code>uname</code> is mainly used to print system information.</li>
+                </ol>
+                <pre><code class="lang-bash">$ uname <span class="hljs-_">-a</span>
+                </code></pre>
+                <ol>
+                <li><strong>Print kernel name</strong>:</li>
+                </ol>
+                <pre><code class="lang-bash">$ uname <span class="hljs-_">-s</span>
+                </code></pre>
+                <ol>
+                <li><strong>Print kernel release</strong>:</li>
+                </ol>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>uname -r
+                </code></pre>
+                <ol>
+                <li><strong>Print Architecture</strong>:</li>
+                </ol>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>uname -m
+                </code></pre>
+                <ol>
+                <li><strong>Print Operating System</strong>:</li>
+                </ol>
+                <pre><code class="lang-bash"><span class="hljs-variable">$ </span>uname -o
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="search-files">Search Files</h3>
+                <ol>
+                <li><strong>Pattern search:</strong>
+                The <code>grep</code> command is used to search patterns in files.</li>
+                </ol>
+                <pre><code class="lang-cmd">grep pattern files
+                grep -<span class="hljs-selector-tag">i</span> <span class="hljs-comment">// Case sensitive</span>
+                grep -r <span class="hljs-comment">// Recursive</span>
+                grep -v <span class="hljs-comment">// Inverted search</span>
+                
+                Example:
+                grep <span class="hljs-string">"^hello"</span> test<span class="hljs-selector-class">.txt</span> <span class="hljs-comment">// Hello John</span>
+                grep -<span class="hljs-selector-tag">i</span> <span class="hljs-string">"hELLo"</span> text<span class="hljs-selector-class">.txt</span> <span class="hljs-comment">// Hello John</span>
+                </code></pre>
+                <ol>
+                <li><strong>Find files and directories:</strong></li>
+                </ol>
+                <p>The <code>find</code> command is used to find or search files and directories by file name, folder name, creation date, modification date, owner and permissions etc and perform subsequent operations on them.</p>
+                <p>i. <strong>Search file with name:</strong></p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">find</span> ./directory_name -<span class="hljs-built_in">name</span> file_name
+                
+                Example:
+                <span class="hljs-built_in">find</span> ./test -<span class="hljs-built_in">name</span> test.txt <span class="hljs-comment">// ./test/test.txt</span>
+                </code></pre>
+                <p>ii. <strong>Search file with pattern:</strong></p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">find</span> ./directory_name -<span class="hljs-built_in">name</span> file_pattern
+                
+                Example:
+                <span class="hljs-built_in">find</span> ./test -<span class="hljs-built_in">name</span> *.txt <span class="hljs-comment">// ./test/test.txt</span>
+                </code></pre>
+                <p>iii. <strong>Search file with executable action:</strong></p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">find</span> ./directory_name -<span class="hljs-built_in">name</span> file_name -<span class="hljs-built_in">exec</span> command
+                
+                Example:
+                <span class="hljs-built_in">find</span> ./test -<span class="hljs-built_in">name</span> test.txt -<span class="hljs-built_in">exec</span> rm -i {} \; <span class="hljs-comment">// Search file and delete it after confirmation</span>
+                </code></pre>
+                <p>iv. <strong>Search for empty files or directories:</strong></p>
+                <p>The find command is used to search all empty folders and files in the entered directory or sub-directories.</p>
+                <pre><code class="lang-cmd">find ./directory_name -empty
+                
+                Example:
+                find ./<span class="hljs-built_in">test</span> -empty
+                //./<span class="hljs-built_in">test</span>/<span class="hljs-built_in">test</span>1
+                //./<span class="hljs-built_in">test</span>/<span class="hljs-built_in">test</span>2
+                //./<span class="hljs-built_in">test</span>/<span class="hljs-built_in">test</span>1.txt
+                </code></pre>
+                <p>v. <strong>Search for files with permissions:</strong></p>
+                <p>The find command is used to find all the files in the mentioned directory or sub-directory with the given permissions</p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">find</span> ./directory_name -perm permission_code
+                
+                Example:
+                <span class="hljs-built_in">find</span> ./test -perm <span class="hljs-number">664</span>
+                </code></pre>
+                <p>vi. <strong>Search text within multiple files:</strong></p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">find</span> ./ -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">name</span> file_pattern -<span class="hljs-built_in">exec</span> grep some_text  {} \;
+                
+                Example:
+                <span class="hljs-built_in">find</span> ./ -<span class="hljs-built_in">type</span> f -<span class="hljs-built_in">name</span> <span class="hljs-string">"*.txt"</span> -<span class="hljs-built_in">exec</span> grep <span class="hljs-string">'World'</span>  {} \; <span class="hljs-comment">// Hello World</span>
+                </code></pre>
+                <ol>
+                <li><strong>Whereis to locate binary or source files for a command:</strong>
+                The whereis command in Linux is used to locate the binary, source, and manual page files for a command. i.e, It is used to It is used to find executables of a program, its man pages and configuration files.</li>
+                </ol>
+                <pre><code class="lang-cmd">whereis command_name
+                
+                <span class="hljs-symbol">Example:</span>
+                whereis netstat /<span class="hljs-regexp">/netstat:  /bin</span><span class="hljs-regexp">/netstat /usr</span><span class="hljs-regexp">/share/man</span><span class="hljs-regexp">/man8/netstat</span>.<span class="hljs-number">8</span>.gz(i.e, executable and location <span class="hljs-keyword">of</span> its man page)
+                </code></pre>
+                <ol>
+                <li><strong>Locate to find files:</strong>
+                The locate command is used to find the files by name. This command is faster compared to find command because it searches database for the filename instead of searching your filesystem.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-keyword">locate</span> [OPTION] PATTERN
+                
+                Example:
+                <span class="hljs-keyword">locate</span> <span class="hljs-string">"*.txt"</span> -n <span class="hljs-number">10</span> <span class="hljs-comment">// 10 file search results ending with .txt extension</span>
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="ssh">SSH</h3>
+                <p>SSH (Secure Shell) is a network protocol that enables secure remote connections between two systems.</p>
+                <ol>
+                <li><strong>Connect remote machine using IP address or machine name:</strong> The remote server can be connected with local user name using either host name or IP address</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-selector-tag">ssh</span> &lt;<span class="hljs-selector-tag">host-name</span>&gt; <span class="hljs-selector-tag">or</span> &lt;<span class="hljs-selector-tag">ip-address</span>&gt;
+                
+                <span class="hljs-selector-tag">Example</span>:
+                <span class="hljs-selector-tag">ssh</span> 192<span class="hljs-selector-class">.111</span><span class="hljs-selector-class">.66</span><span class="hljs-selector-class">.100</span>
+                <span class="hljs-selector-tag">ssh</span> <span class="hljs-selector-tag">test</span><span class="hljs-selector-class">.remoteserver</span><span class="hljs-selector-class">.com</span>
+                </code></pre>
+                <ol>
+                <li><strong>Connect remote machine using username:</strong> It is also possible specify a user for an SSH connection.</li>
+                </ol>
+                <pre><code class="lang-cmd">ssh username@hostname_or_ip-<span class="hljs-selector-tag">address</span>
+                
+                Example:
+                ssh john@<span class="hljs-number">192.0</span>.<span class="hljs-number">0.22</span>
+                ssh john@test<span class="hljs-selector-class">.remoteserver</span><span class="hljs-selector-class">.com</span>
+                </code></pre>
+                <ol>
+                <li><strong>:Connect remote machine using custom port</strong> By default, the SSH server listens for a connection on port 22. But you can also specify the custom port.</li>
+                </ol>
+                <pre><code class="lang-cmd">ssh &lt;host-name&gt; or &lt;ip-address&gt; -<span class="hljs-selector-tag">p</span> port_number
+                
+                Example:
+                ssh test<span class="hljs-selector-class">.remoteserver</span><span class="hljs-selector-class">.com</span> -<span class="hljs-selector-tag">p</span> <span class="hljs-number">3322</span>
+                </code></pre>
+                <ol>
+                <li><strong>Generate SSH keys using keygen:</strong> SSH Keygen is used to generate a key pair which consists of public and private keys to improve the security of SSH connections.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">ssh-keygen -t rsa</span>
+                </code></pre>
+                <ol>
+                <li><strong>Copying SSH keys to servers:</strong> For SSH authentication, <code>ssh-copy-id</code> command will be used to copy public key(id_rsa.pub) to server.</li>
+                </ol>
+                <pre><code class="lang-cmd">ssh-<span class="hljs-keyword">copy</span>-<span class="hljs-built_in">id</span> hostname_or_IP
+                </code></pre>
+                <ol>
+                <li><strong>Copy a File Remotely over SSH:</strong> SCP tool is used to securely copy files over the SSH protocol.</li>
+                </ol>
+                <pre><code class="lang-cmd">scp fileName user<span class="hljs-variable">@remotehost</span><span class="hljs-symbol">:destinationPath</span>
+                
+                <span class="hljs-symbol">Example:</span>
+                scp test.txt test<span class="hljs-variable">@10</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">64</span><span class="hljs-symbol">:/home/john/Desktop</span>
+                </code></pre>
+                <ol>
+                <li><strong>Edit SSH Config File</strong> SSH server options customized by editing the settings in <code>sshd_config</code> file.</li>
+                </ol>
+                <pre><code class="lang-cmd">sudo vim <span class="hljs-regexp">/etc/</span>ssh<span class="hljs-regexp">/sshd_config</span>
+                </code></pre>
+                <ol>
+                <li><strong>Run commands on a remote server</strong> SSH commands can be executed on remote machine using the local machine.</li>
+                </ol>
+                <pre><code class="lang-cmd">ssh test<span class="hljs-selector-class">.remoteserver</span><span class="hljs-selector-class">.com</span> mkdir NewDirectoryName <span class="hljs-comment">// Creating directory on remote machine</span>
+                </code></pre>
+                <ol>
+                <li><strong>Restart SSH service:</strong> You need to restart the service in Linux after making changes to SSH configuration.</li>
+                </ol>
+                <pre><code class="lang-cmd">sudo ssh service <span class="hljs-built_in">restart</span>
+                (<span class="hljs-keyword">or</span>)
+                sudo sshd service <span class="hljs-built_in">restart</span>
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="vi-vim-commands">Vi/Vim-commands</h3>
+                <p>Vi editor is the most popular text editor from the early days of Unix. Whereas Vim(Vi IMproved) is an improved version of vi editor to be used in CLI (command line interface) for mainly text editing tasks in many configuration files. Some of the other alternatives are Elvis, Nvi, Nano, Joe, and Vile.
+                It has two main operation modes,</p>
+                <ol>
+                <li><strong>Command Mode:</strong> It allows the entry of commands to manipulate text.</li>
+                <li><strong>Entry mode(Or Insert mode):</strong> It allows typed characters on the keyboard into the current file.</li>
+                </ol>
+                <h4 id="1-start-with-vi-editor">1. Start with Vi Editor</h4>
+                <p>You can create a new file or open an existing file using <code>vi filename</code> command.</p>
+                <pre><code class="lang-cmd"> <span class="hljs-keyword">vi</span> <span class="hljs-symbol">&lt;filename_NEW&gt;</span> <span class="hljs-built_in">or</span> <span class="hljs-symbol">&lt;filename_EXISTING&gt;</span> // Create <span class="hljs-keyword">a</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">file</span> <span class="hljs-built_in">or</span> <span class="hljs-keyword">open</span> <span class="hljs-keyword">an</span> existing <span class="hljs-keyword">file</span>
+                
+                 Example:
+                 <span class="hljs-keyword">vi</span> <span class="hljs-keyword">first</span>.txt
+                </code></pre>
+                <p>Let&#39;s see how do you create file, enter the content and leave the CLI by saving the changes.</p>
+                <ol>
+                <li>Create a new file named <code>first.txt</code></li>
+                <li>Press <code>i</code> to enter the insert mode</li>
+                <li>Enter the text &quot;Hello World!&quot;</li>
+                <li>Save the text and exit by pressing <code>:wq!</code> command</li>
+                <li>Check the entered text</li>
+                </ol>
+                <h4 id="2-cursor-movement">2. Cursor movement</h4>
+                <pre><code>These commands will <span class="hljs-keyword">be</span> used <span class="hljs-keyword">in</span> Command <span class="hljs-keyword">mode</span>.
+                </code></pre><h5 id="move-cursor">Move cursor</h5>
+                <p>You can use arrow keys(left, right, up and down) to move the cursor on the terminal. But you can also other keys for this behavior.</p>
+                <pre><code class="lang-cmd"> h        # Move <span class="hljs-attribute">left</span>
+                 j        # Move down
+                 k        # Move up
+                 l        # Move <span class="hljs-attribute">right</span>
+                </code></pre>
+                <h5 id="jump-one-word">Jump one word</h5>
+                <p>These commands used to jump one word at a time</p>
+                <pre><code class="lang-cmd">w        <span class="hljs-comment"># Jump forwards to the start of a word</span>
+                W        <span class="hljs-comment"># Jump forwards to the start of a WORD</span>
+                e        <span class="hljs-comment"># Jump forwards to the start of a word</span>
+                E        <span class="hljs-comment"># Jump forwards to the start of a WORD</span>
+                <span class="hljs-keyword">b </span>       <span class="hljs-comment"># Jump backwords to the start of a word</span>
+                <span class="hljs-keyword">B </span>       <span class="hljs-comment"># Jump backwords to the start of a WORD</span>
+                </code></pre>
+                <h5 id="jump-to-start-or-end-of-a-line-or-next-line">Jump to start or end of a line or next line</h5>
+                <p>These commands used to jump starting or ending of a line or a next line.</p>
+                <pre><code class="lang-cmd">^        # Jump <span class="hljs-keyword">to</span> the start <span class="hljs-keyword">of</span> a current <span class="hljs-literal">line</span>
+                $        # Jump <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> a current <span class="hljs-literal">line</span>
+                <span class="hljs-keyword">return</span>   # Jump <span class="hljs-keyword">to</span> the start <span class="hljs-keyword">of</span> a <span class="hljs-keyword">next</span> <span class="hljs-literal">line</span>
+                </code></pre>
+                <h5 id="move-sides">Move sides</h5>
+                <p>These commands used to moves all sides of the screen</p>
+                <pre><code class="lang-cmd">Backspace # Move <span class="hljs-attribute">cursor</span> one character to the <span class="hljs-attribute">left</span>
+                Spacebar  # Move <span class="hljs-attribute">cursor</span> one character to the <span class="hljs-attribute">right</span>
+                H(High)   # Move <span class="hljs-attribute">cursor</span> to the <span class="hljs-attribute">top</span> of the screen
+                M(Middle) # Move <span class="hljs-attribute">cursor</span> to the middle of the screen
+                L(Low)    # Move <span class="hljs-attribute">cursor</span> to the <span class="hljs-attribute">bottom</span> of the screen
+                </code></pre>
+                <h5 id="paging-and-scrolling">Paging and Scrolling</h5>
+                <p>Paging is used to moves the cursor up or down through the text a full screen at a time. Whereas Scrolling happens line by line.</p>
+                <pre><code class="lang-cmd"><span class="hljs-symbol">Ctrl</span> + f     # <span class="hljs-keyword">move </span>forward one full screen
+                <span class="hljs-symbol">Ctrl</span> + <span class="hljs-keyword">b </span>    # <span class="hljs-keyword">move </span><span class="hljs-keyword">backward </span>one full screen
+                <span class="hljs-symbol">Ctrl</span> + d     # <span class="hljs-keyword">move </span>forward half a screen
+                <span class="hljs-symbol">Ctrl</span> + u     # <span class="hljs-keyword">move </span><span class="hljs-keyword">backward </span>half a screen
+                </code></pre>
+                <h5 id="inserting-text">Inserting Text</h5>
+                <p>These commands places vi in entry mode from command mode. First, you need to be in command mode to use the below commands.</p>
+                <h6 id="insert">Insert</h6>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">i</span>    <span class="hljs-comment"># Insert text to the left of the cursor</span>
+                I    <span class="hljs-comment"># Insert text at the beginning of a line</span>
+                ESC  <span class="hljs-comment"># Exit insert mode</span>
+                </code></pre>
+                <h6 id="append">Append</h6>
+                <pre><code class="lang-cmd">a    # Insert(<span class="hljs-keyword">or</span> Append) <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the right <span class="hljs-keyword">of</span> the cursor
+                A    # Insert(<span class="hljs-keyword">or</span> Append) <span class="hljs-literal">text</span> at the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> a <span class="hljs-literal">line</span>
+                </code></pre>
+                <h6 id="open-a-line">Open a line</h6>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">o</span>    <span class="hljs-comment"># Open a line below the current cursor position</span>
+                O    <span class="hljs-comment"># open a line above the current cursor position</span>
+                </code></pre>
+                <h5 id="editing-text">Editing Text</h5>
+                <ol>
+                <li><p><strong>Change word:</strong> Change word/part of word to right of cursor</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> cw</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Change line</strong> Change entire line</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> cc</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Change line from specific character</strong> Change from cursor to end of line</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> C</span>
+                </code></pre>
+                </li>
+                </ol>
+                <h5 id="deleting-text">Deleting Text</h5>
+                <ol>
+                <li><p><strong>Deleting One Character:</strong> Position the cursor over the character to be deleted and type x</p>
+                <pre><code class="lang-cmd"> x
+                 X       //To <span class="hljs-keyword">delete</span> one <span class="hljs-built_in">character</span> <span class="hljs-keyword">before</span> the <span class="hljs-keyword">cursor</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Deleting a Word:</strong> Position the cursor at the beginning of the word and type dw</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> dw</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Deleting a Line:</strong> Position the cursor anywhere on the line and type dd.</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute"> dd</span>
+                </code></pre>
+                </li>
+                </ol>
+                <h5 id="cut-copy-paste">Cut, Copy &amp; Paste</h5>
+                <p>   Copy, Cut and Paste operations can be done in either Normal or visual Mode.</p>
+                <ol>
+                <li><p><strong>Normal mode:</strong> This mode appears on click of <code>Esc</code> key.</p>
+                <p><strong>Copy</strong> There are various copy or yank commands based on amount of text to be copied. The <code>y</code> character is used to perform this operation.</p>
+                <p>i. Copy an entire line: Just place the cursor at the beginning of the line and type <code>yy</code></p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">yy</span>
+                </code></pre>
+                <p>ii.Copy three lines: Just place the cursor from where to start copying and type <code>3yy</code></p>
+                <pre><code class="lang-cmd"><span class="hljs-number">3</span>yy
+                </code></pre>
+                <p>iii. Copy word with trailing whitespace: Place the cursor at the beginning of the word and type <code>yaw</code></p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">yaw</span>
+                </code></pre>
+                <p>iv. Copy word without trailing whitespace: Place the cursor at the beginning of the word and type <code>yiw</code>.</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">yiw</span>
+                </code></pre>
+                <p>v. Copy right of the cursor: Copy text right of the cursor to the end of line using <code>y$</code> command</p>
+                <pre><code class="lang-cmd">y<span class="hljs-symbol">$</span>
+                </code></pre>
+                <p>vi.Copy left of the cursor: Copy text left of the cursor to the end of line using <code>y^</code> command</p>
+                <pre><code class="lang-cmd">y^
+                </code></pre>
+                <p>vii. Copy text between the cursor and character: Copy text between the cursor and specified character.</p>
+                <pre><code class="lang-cmd">ytx(<span class="hljs-keyword">Copy</span> <span class="hljs-keyword">until</span> x <span class="hljs-keyword">and</span> x <span class="hljs-keyword">is</span> excluded)
+                yfx(<span class="hljs-keyword">Copy</span> <span class="hljs-keyword">until</span> x <span class="hljs-keyword">and</span> x <span class="hljs-keyword">is</span> included)
+                </code></pre>
+                <p><strong>Cut</strong> There are various cutting or deleting commands based on amount of text to be deleted. The <code>d</code> character is used to perform this operation.</p>
+                <p>i. Cut entire line: Cut the entire line where the cursor is located</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">dd</span>
+                </code></pre>
+                <p>ii.Cut three lines: Cut the three lines starting from the place where cursor is located</p>
+                <pre><code class="lang-cmd"><span class="hljs-number">3d</span>d
+                </code></pre>
+                <p>iii.Cut right of the cursor: Cut the text from the right of the cursor till the end of line</p>
+                <pre><code class="lang-cmd">d<span class="hljs-symbol">$</span>
+                </code></pre>
+                <p>iii.Cut left of the cursor: Cut the text from the left of the cursor till the beginning of line</p>
+                <pre><code class="lang-cmd">d^
+                </code></pre>
+                <p><strong>Paste</strong> This operation is performed using <code>p</code> command to paste the selected text</p>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">p</span>
+                </code></pre>
+                </li>
+                <li><p><strong>Visual Mode</strong> In this mode, first select the text using below keys</p>
+                <ol>
+                <li>v (lowercase): To select individual characters</li>
+                <li>V (uppercase): To select the entire line</li>
+                <li><p>Ctrl+v: To select by block</p>
+                <p>and perform copy, cut and paste operations using y,d and p commands</p>
+                </li>
+                </ol>
+                </li>
+                </ol>
+                <h5 id="exiting">Exiting</h5>
+                <pre><code>These commands are used to <span class="hljs-keyword">exit</span> from the file.
+                ```cmd
+                :w        <span class="hljs-comment"># Write (save) the file, but don't exit</span>
+                :wq        <span class="hljs-comment"># Write (save) and quit</span>
+                :wq!    <span class="hljs-comment"># Force write (save) and quit</span>
+                :q        <span class="hljs-comment"># Quit, but it fails if anything has changed</span>
+                :q!        <span class="hljs-comment"># Quit and throw away for any changes</span>
+                ```
+                </code></pre><p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="top-taskmanager-command">Top/TaskManager Command</h3>
+                <p>top: The <code>top</code> command provides dynamic real-time viewing of the running system. It can display system summary information as well as a list of tasks currently being managed by the Linux kernel.</p>
+                <h4 id="options">options</h4>
+                <table>
+                <thead>
+                <tr>
+                <th>Option</th>
+                <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>-b</td>
+                <td>Batch mode</td>
+                </tr>
+                <tr>
+                <td>-n</td>
+                <td>Number of iterations</td>
+                </tr>
+                <tr>
+                <td>-s</td>
+                <td>Sec delay between updates</td>
+                </tr>
+                <tr>
+                <td>-d</td>
+                <td>Delay time in seconds</td>
+                </tr>
+                <tr>
+                <td>-p</td>
+                <td>Monitor process ID</td>
+                </tr>
+                </tbody>
+                </table>
+                <pre><code class="lang-cmd"><span class="hljs-attribute">top</span> <span class="hljs-selector-attr">[options]</span>
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="kill-command">Kill Command</h3>
+                <p>kill: The kill command sends a signal to a process. Useful when trying to terminate a hung process.</p>
+                <p><strong>options:</strong>
+                | Option | Description                                   |
+                |--------|-----------------------------------------------|
+                | -s     | Specify the signal to send (e.g., -s SIGTERM) |
+                | -l     | List available signals                        |
+                | -n     | Process group ID                              |
+                | -signal| Specify the signal using signal name or number|
+                | -p     | Specify the process ID to be signaled         |</p>
+                <h4 id="kill-command-options">kill Command Options</h4>
+                <ol>
+                <li>-s Option
+                Specifies the signal to send to the process. Use in the format -s SIGNAL. For example:</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">kill</span> <span class="hljs-_">-s</span> SIGTERM &lt;process_id&gt;
+                </code></pre>
+                <ol>
+                <li>-l Option
+                Lists available signals that can be used with the kill command. This option does not send any signal; it only displays a list of signals.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">kill</span> <span class="hljs-_">-l</span>
+                </code></pre>
+                <ol>
+                <li>-n Option
+                Specifies the process group ID. This option allows you to send a signal to a process group rather than an individual process.</li>
+                </ol>
+                <pre><code class="lang-cmd">kill -n <span class="hljs-tag">&lt;<span class="hljs-name">process_group_id</span>&gt;</span>
+                </code></pre>
+                <ol>
+                <li>-signal Option
+                Specifies the signal to send using either the signal name or number directly.</li>
+                </ol>
+                <pre><code class="lang-cmd">kill -TERM <span class="hljs-tag">&lt;<span class="hljs-name">process_id</span>&gt;</span>
+                </code></pre>
+                <ol>
+                <li>-p Option
+                Specifies the process ID to be signaled. Use in the format -p <process_id>.</li>
+                </ol>
+                <pre><code class="lang-cmd">kill -<span class="hljs-selector-tag">p</span> &lt;process_id&gt;
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="history-command-options">History Command Options</h3>
+                <p>The history command shows a list of previously issued commands.</p>
+                <h4 id="history-command-options">history Command Options</h4>
+                <table>
+                <thead>
+                <tr>
+                <th>Option</th>
+                <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><code>-c</code></td>
+                <td>Clears the entire command history.</td>
+                </tr>
+                <tr>
+                <td><code>-d offset</code></td>
+                <td>Deletes the history entry at the specified offset.</td>
+                </tr>
+                <tr>
+                <td><code>-a</code></td>
+                <td>Appends the current session&#39;s history to the history file.</td>
+                </tr>
+                <tr>
+                <td><code>-r</code></td>
+                <td>Reads the history file and appends entries to the session.</td>
+                </tr>
+                <tr>
+                <td><code>-n</code></td>
+                <td>Prevents command numbers from being displayed.</td>
+                </tr>
+                <tr>
+                <td><code>-w</code></td>
+                <td>Writes the current session&#39;s history to the history file.</td>
+                </tr>
+                <tr>
+                <td>`-s &quot;<command>&quot;</td>
+                <td>Appends the specified entry to the end of the history list.</td>
+                </tr>
+                <tr>
+                <td><code>-p offset</code></td>
+                <td>Prints the history entry at the specified offset.</td>
+                </tr>
+                <tr>
+                <td><code>-f file</code></td>
+                <td>Reads history entries from the specified file.</td>
+                </tr>
+                </tbody>
+                </table>
+                <ol>
+                <li><p>-c Option
+                Clears the entire command history.</p>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> -c
+                </code></pre>
+                </li>
+                <li><p>-d offset Option
+                Deletes the history entry at the specified offset.</p>
+                </li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> <span class="hljs-_">-d</span> &lt;offset&gt;
+                </code></pre>
+                <ol>
+                <li>-a Option
+                Appends the current session&#39;s history to the history file.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> <span class="hljs-_">-a</span>
+                </code></pre>
+                <ol>
+                <li>-r Option
+                Reads the history file and appends the entries to the current session&#39;s history.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> -r
+                </code></pre>
+                <ol>
+                <li>-n Option
+                Prevents command numbers from being displayed when using the history command.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> -n
+                </code></pre>
+                <ol>
+                <li>-w Option
+                Writes the current session&#39;s history to the history file.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> -w
+                </code></pre>
+                <ol>
+                <li>-s Option
+                Appends the specified entry to the end of the history list.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> <span class="hljs-_">-s</span> <span class="hljs-string">"&lt;command&gt;"</span>
+                </code></pre>
+                <ol>
+                <li>-p Option
+                Prints the history entry at the specified offset.</li>
+                </ol>
+                <pre><code class="lang-cmd">history -<span class="hljs-selector-tag">p</span> &lt;offset&gt;
+                </code></pre>
+                <ol>
+                <li>-f file Option
+                Reads history entries from the specified file and appends them to the history list.</li>
+                </ol>
+                <pre><code class="lang-cmd"><span class="hljs-built_in">history</span> <span class="hljs-_">-f</span> &lt;file&gt;
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                <h3 id="curl-command">Curl Command</h3>
+                <p>Curl: The curl command transfers data to or from a server. It supports dozens of protocols, including HTTP, HTTPS, FTP, SFTP, Telnet, DICT, LDAP, LDAPS, FILE, IMAP, SMTP, POP3, RTSP and RTMP.</p>
+                <p><strong>Options</strong></p>
+                <table>
+                <thead>
+                <tr>
+                <th>Option</th>
+                <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td><code>-X, --request &lt;command&gt;</code></td>
+                <td>Specify the HTTP request method (GET, POST, etc.).</td>
+                </tr>
+                <tr>
+                <td><code>-H, --header &lt;header&gt;</code></td>
+                <td>Pass custom headers to the request.</td>
+                </tr>
+                <tr>
+                <td><code>--data &lt;data&gt;</code></td>
+                <td>HTTP POST data.</td>
+                </tr>
+                <tr>
+                <td><code>--data-urlencode &lt;data&gt;</code></td>
+                <td>URL encode the POST data.</td>
+                </tr>
+                <tr>
+                <td><code>--form &lt;name=content&gt;</code></td>
+                <td>Specify multipart/form-data POST data.</td>
+                </tr>
+                <tr>
+                <td><code>-d, --data-raw &lt;data&gt;</code></td>
+                <td>Send data as-is without any encoding.</td>
+                </tr>
+                <tr>
+                <td><code>-i, --include</code></td>
+                <td>Include HTTP headers in the output.</td>
+                </tr>
+                <tr>
+                <td><code>--url &lt;url&gt;</code></td>
+                <td>Specify the URL to send the request to.</td>
+                </tr>
+                <tr>
+                <td><code>-o, --output &lt;file&gt;</code></td>
+                <td>Write output to a file instead of stdout.</td>
+                </tr>
+                <tr>
+                <td><code>-O, --remote-name</code></td>
+                <td>Save the file with the same name as in the URL.</td>
+                </tr>
+                <tr>
+                <td><code>-L, --location</code></td>
+                <td>Follow redirects.</td>
+                </tr>
+                <tr>
+                <td><code>--user &lt;user:password&gt;</code></td>
+                <td>Specify the user and password for server authentication.</td>
+                </tr>
+                <tr>
+                <td><code>-u, --user-agent &lt;agent&gt;</code></td>
+                <td>Set the user-agent string.</td>
+                </tr>
+                <tr>
+                <td><code>--cookie &lt;data&gt;</code></td>
+                <td>Send cookies from string/file.</td>
+                </tr>
+                <tr>
+                <td><code>--cookie-jar &lt;file&gt;</code></td>
+                <td>Save cookies to a file after receiving them.</td>
+                </tr>
+                <tr>
+                <td><code>--compressed</code></td>
+                <td>Request compressed response.</td>
+                </tr>
+                <tr>
+                <td><code>-v, --verbose</code></td>
+                <td>Make the operation more talkative for debugging.</td>
+                </tr>
+                <tr>
+                <td><code>-h, --help</code></td>
+                <td>Display help information.</td>
+                </tr>
+                </tbody>
+                </table>
+                <ol>
+                <li>Basic GET Request:
+                Sends a simple GET request to the specified URL.</li>
+                </ol>
+                <pre><code class="lang-cmd">curl <span class="hljs-string">http:</span><span class="hljs-comment">//example.com</span>
+                </code></pre>
+                <ol>
+                <li>Specify Request Method:
+                Specifies a request method other than the default GET.</li>
+                </ol>
+                <pre><code class="lang-cmd">curl -X POST <span class="hljs-string">http:</span><span class="hljs-comment">//example.com</span>
+                </code></pre>
+                <ol>
+                <li>Include Headers:</li>
+                </ol>
+                <p>Includes custom headers in the request.</p>
+                <pre><code class="lang-cmd">curl -H <span class="hljs-string">"Content-Type: application/json"</span> <span class="hljs-string">http:</span><span class="hljs-comment">//example.com</span>
+                </code></pre>
+                <ol>
+                <li>Send POST Data:
+                Sends data as POST request payload.</li>
+                </ol>
+                <pre><code class="lang-cmd">curl -X POST --data <span class="hljs-string">"key1=value1&amp;key2=value2"</span> <span class="hljs-string">http:</span><span class="hljs-comment">//example.com</span>
+                </code></pre>
+                <ol>
+                <li>Save Output to File:
+                Writes the output to a specified file.</li>
+                </ol>
+                <pre><code class="lang-cmd">curl -o output<span class="hljs-selector-class">.html</span> http:<span class="hljs-comment">//example.com</span>
+                </code></pre>
+                <ol>
+                <li>Download File:
+                Downloads a file and saves it with the same name as in the URL.</li>
+                </ol>
+                <pre><code class="lang-cmd">curl -O <span class="hljs-string">http:</span><span class="hljs-comment">//example.com/file.zip</span>
+                </code></pre>
+                <p><strong><a href="#table-of-contents">⬆ Back to Top</a></strong></p>
+                
+            </div>
+        </main>
+    </div>
+</body>
+</html>
